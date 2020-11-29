@@ -5,17 +5,67 @@
 body {
   background: #FFFFFF;
 }
-header, main, footer {
+.page-wrapper {
   max-width: 1600px;
+
   margin: 0 auto;
 }
 header {
   height: 750px;
   background: yellow;
+  background-image: url(images/background/BG.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.top_header {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 80px;
+  padding-top: 45px;
+}
+.top_header ul {
+  display: inline-flex;
+  align-items: center;
+  width: 445px;
+  justify-content: space-between;
+}
+.top_header ul li {
+  list-style: none;
+}
+.top_header ul li a {
+  text-decoration: none;
+  color: white;
+}
+.top_header form {
+  display: flex;
+  align-items: center;
+}
+.top_header form button {
+  padding: 5px 20px;
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 1px;
+  color: white;
+}
+.mid_header {
+  display: flex;
+  justify-content: space-between;
+  margin: 150px 80px 0 80px;
+  min-height: 315px;
+  height: 42%;
+}
+.mid_header_left {
+  width: 35.25%;
+  background: pink;
+}
+.mid_header_right {
+  width: 37.50%;
+  background: brown;
 }
 main {
   background: green;
-  height: 3810px;
+  height: 3805px;
+
 }
 footer {
   background: red;
