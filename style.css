@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: #FFFFFF;
+}
+header, main, footer {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+header {
+  height: 750px;
+  background: yellow;
+}
+main {
+  background: green;
+  height: 3810px;
+}
+footer {
+  background: red;
+  height: 300px;
+}
