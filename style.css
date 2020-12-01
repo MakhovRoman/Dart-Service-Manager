@@ -1,3 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@font-face {
+  font-family: Raleway-ExtraBold;
+  src: url(./fonts/Raleway-ExtraBold.ttf);
+}
+@font-face {
+  font-family: Raleway-Regular;
+  src: url(./fonts/Raleway-Regular.ttf);
+}
+@font-face {
+  font-family: Raleway-SemiBold;
+  src: url(./fonts/Raleway-SemiBold.ttf);
+}
 * {
   margin: 0;
   padding: 0;
@@ -11,17 +24,28 @@ body {
   margin: 0 auto;
 }
 header {
-  height: 750px;
   background: yellow;
   background-image: url(images/background/BG.png);
   background-size: contain;
   background-repeat: no-repeat;
+  /*создание пропорционального изменения высоты и ширины*/
+  width: 100%;
+  position: relative;
+  padding-top: 46.875%;
 }
+.wrapper-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+/*конец создания пропорционального изменения высоты и ширины https://denis-creative.com/sohranyaem-proportsii-vysoty-i-shiriny-elementa-pri-izmenenii-shiriny-kontenta-na-chistom-css/ */
 .top_header {
   display: flex;
   justify-content: space-between;
-  margin: 0 80px;
-  padding-top: 45px;
+  margin: 0 5%;
+  padding-top: 3%;
 }
 .top_header ul {
   display: inline-flex;
@@ -34,7 +58,14 @@ header {
 }
 .top_header ul li a {
   text-decoration: none;
+  user-select: none;
   color: white;
+  font-family: "Raleway-SemiBold";
+  transition: 0.3s;
+}
+.top_header ul li a:hover {
+  color: black;
+  transition: 0.3s;
 }
 .top_header form {
   display: flex;
@@ -46,21 +77,69 @@ header {
   border: 1px solid white;
   border-radius: 1px;
   color: white;
+  font-family: "Raleway-Regular";
+  transition: 0.3s;
+  cursor: pointer;
+}
+.top_header form button:hover {
+  border-color: black;
+  color: black;
+  transition: 0.3s;
 }
 .mid_header {
   display: flex;
   justify-content: space-between;
-  margin: 150px 80px 0 80px;
-  min-height: 315px;
+  margin: 9.38% 5% 0 5%;
   height: 42%;
 }
 .mid_header_left {
   width: 35.25%;
-  background: pink;
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .mid_header_right {
   width: 37.50%;
   background: brown;
+}
+.mid_header_left h3 {
+  font-family: "Raleway-ExtraBold";
+  font-size: 3vw;
+  text-transform: uppercase;
+  user-select: none;
+}
+.mid_header_left p {
+  font-family: "Raleway-Regular";
+  font-size: 0.9vw;
+}
+.button_link {
+  height: 17.46%;
+}
+.mid_header_left a {
+  display: inline-flex;
+  width: 26.61%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: white;
+  border-radius: 8px;
+  text-transform: uppercase;
+  font-family: "Roboto";
+  font-size: 1vw;
+  background: #061E37;
+  box-shadow: 0 2px 2px 0 rgba(0 0 0 0 0.5);
+}
+.mid_header_left a+a {
+  color: #061E37;
+  background: #FFFFFF;
+  margin-left: 5.6%;
+}
+.mid_header_right iframe {
+  max-width: 100%;
+  max-height: 100%;
 }
 main {
   background: green;
