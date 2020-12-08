@@ -156,11 +156,12 @@ main {
   height: 3805px;
 }
 .easy_and_useful {
-  width: 90%;
+  width: 1440px;
   background: pink;
   position: relative;
   margin: 0 auto;
 }
+
 .easy_and_useful::before {
   content: "";
   display: block;
@@ -304,8 +305,8 @@ main {
   transition: 0.3s;
 }
 .services {
-  width: 50%;
-  position: relative;
+  width: 800px;
+
   margin: 0 auto;
 }
 .services_wrapper {
@@ -316,16 +317,16 @@ main {
 .services_wrapper h3 {
   margin-top: 12.5%;
   font-family: "Raleway-SemiBold";
-  font-size: 2vw;
+  font-size: 35pt;
 }
 .services_wrapper>p {
   margin-top: 3.75%;
   width: 70%;
   text-align: center;
-  line-height: 1.4vw;
+  line-height: 15pt;
   font-family: "Raleway-Regular";
   color: #B0BEC5;
-  font-size: 0.9vw;
+  font-size: 10pt;
 }
 .services_wrapper details {
   background: transparent;
@@ -358,13 +359,20 @@ summary:focus {
 .summary_image img {
   max-width: 100%;
 }
+.summary_arrow {
+  margin-left: auto;
+  width: 1.5%;
+}
+.summary_arrow img {
+  max-width: 100%;
+}
 .services_wrapper details summary::-webkit-details-marker {
   display: none;
 }
-.services_wrapper details span {
+.services_wrapper summary span {
   font-family: "Raleway-Bold";
   text-transform: uppercase;
-  font-size: 0.85vw;
+  font-size: 11pt;
   margin-left: 3.75%;
 }
 .details_items {
@@ -406,4 +414,31 @@ summary:focus {
 footer {
   background: red;
   height: 300px;
+}
+
+
+/*====================== ADAPTIVE ======================*/
+@media (max-width: 1455px) {
+  .easy_and_useful {
+    width: 100%;
+  }
+}
+@media (max-width: 1300px) {
+  .services_wrapper h3 {
+    margin-top: 8.5%;
+  }
+}
+@media (max-width: 1023px) {
+  .services {
+    width: 78%;
+  }
+  .services_wrapper h3 {
+    font-size: 4.2vw;
+  }
+  .services_wrapper p {
+    font-size: 1.4vw;
+  }
+  .services_wrapper summary span {
+    font-size: 1.4vw;
+  }
 }
