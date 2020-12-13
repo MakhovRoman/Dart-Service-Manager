@@ -580,7 +580,7 @@ summary:focus {
   grid-area: left;
 }
 .avatar_1 input[type=radio]:checked+label>img, .avatar_3 input[type=radio]:checked+label>img {
-  width: 160%;
+  width: 152%;
   position: relative;
   right: 30%;
   transition: width 0.8s;
@@ -596,6 +596,16 @@ summary:focus {
   position: relative;
   left: 20%;
   transition: width 0.5s;
+}
+.team_links {
+  margin-top: 14.5%;
+  width: 14%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.team_links img {
+  flex-basis: content;
 }
 /*====================== FOOTER ======================*/
 
