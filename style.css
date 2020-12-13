@@ -395,6 +395,9 @@ summary:focus {
 .details_text p+p {
   margin-top: 8%;
 }
+
+/*====================== TESTIMONIALS ======================*/
+
 .testimonials {
   width: 100%;
   position: relative;
@@ -411,7 +414,7 @@ summary:focus {
   background: yellow;
   overflow: hidden;
 }
-.testimonials_wrapper img {
+.testimonials_wrapper>img {
   max-width: 100%;
   animation: scale 8s infinite alternate;
   z-index: 0;
@@ -424,7 +427,7 @@ summary:focus {
 .testimonials_content {
   width: 90%;
   height: 100%;
-  
+
   z-index: 100;
   position: relative;
   margin: 0 auto;
@@ -441,12 +444,14 @@ summary:focus {
 .testimonials_item:first-child {
   height: 51.32%;
   width: 35.76%;
-
 }
 .testimonials_item:last-child {
   width: 52.78%;
   height: 85.84%;
-  background: yellow;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 }
 .testimonials_item_text {
   font-family: "Raleway-SemiBold";
@@ -470,7 +475,127 @@ summary:focus {
   padding: 1vw;
   border-radius: 0.3vw;
 }
+.testimonials_item_people {
+  display: flex;
+  justify-content: space-between;
+}
+.testimonials_item_people_avatar {
+  width: 32%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+.testimonials_item_people_about {
+  display: flex;
+  flex-direction: column;
+  background: #FFFFFF;
+  padding: 4.6%;
+  margin-left: 6.6%;
+  border-radius: 0.45vw;
+}
+.testimonials_item_people_about h3 {
+  font-family: "Raleway-Bold";
+  font-size: 1.3vw;
+}
+.testimonials_item_people_about p {
+  font-family: "Raleway-Regular";
+  color: #78909C;
+  font-style: italic;
+  font-size: 0.8vw;
+  margin-top: 3%;
+}
+
+/*====================== TEAM ======================*/
+
+.team {
+  width: 90%;
+  height: 760px;
+  background: yellow;
+  margin: 0 auto;
+}
+.team_wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #FFFFFF;
+}
+.team_wrapper h3 {
+  font-family: "Raleway-SemiBold";
+  margin-top: 6.95%;
+  font-size: 40pt;
+}
+.team_wrapper p {
+  margin-top: 2.1%;
+  font-family: "Raleway-Regular";
+  font-size: 11pt;
+  color: #78909C;
+  width: 38.5%;
+  text-align: center;
+  line-height: 17pt;
+}
+.team_wrapper_avatars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 1fr;
+  grid-template-areas: "left centre right";
+  align-items: center;
+  justify-items: center;
+  margin-top: 5.55%;
+  position: relative;
+}
+.form_radio_avatars input[type=radio] {
+  display: none;
+}
+.content_avatars {
+  position: absolute;
+  left: -15%;
+  right: 0;
+  width: 134.5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.content_avatars p {
+  width: 100%;
+  font-family: "Raleway-Regular";
+  color: #78909C;
+  font-size: 0.8vw;
+}
+.form_radio_avatars input[type=radio]:checked~.content_avatars {
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+.form_radio_avatars input[type=radio]:checked +label>img {
+  border: 8px solid black;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+.avatar_1 {
+  grid-area: left;
+}
+.avatar_1 input[type=radio]:checked+label>img, .avatar_3 input[type=radio]:checked+label>img {
+  width: 160%;
+  position: relative;
+  right: 30%;
+  transition: width 0.8s;
+}
+.avatar_2 {
+  grid-area: centre;
+}
+.avatar_3 {
+  grid-area: right;
+}
+.avatar_2 input[type=radio]:not(:checked)+label>img {
+  width: 60%;
+  position: relative;
+  left: 20%;
+  transition: width 0.5s;
 }
 /*====================== FOOTER ======================*/
 
