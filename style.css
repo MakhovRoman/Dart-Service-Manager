@@ -15,6 +15,10 @@
   font-family: Raleway-Bold;
   src: url(./fonts/Raleway-Bold.ttf);
 }
+@font-face {
+  font-family: Raleway-Medium;
+  src: url(./fonts/Raleway-Medium.ttf);
+}
 * {
   margin: 0;
   padding: 0;
@@ -31,7 +35,6 @@ body {
 /*====================== HEADER ======================*/
 
 header {
-  background: yellow;
   background-image: url(images/background/BG.png);
   background-size: contain;
   background-repeat: no-repeat;
@@ -48,37 +51,37 @@ header {
   right: 0;
 }
 /*конец создания пропорционального изменения высоты и ширины https://denis-creative.com/sohranyaem-proportsii-vysoty-i-shiriny-elementa-pri-izmenenii-shiriny-kontenta-na-chistom-css/ */
-.top_header {
+nav {
   display: flex;
   justify-content: space-between;
   margin: 0 5%;
   padding-top: 3%;
 }
-.top_header ul {
+nav ul {
   display: inline-flex;
   align-items: center;
   width: 445px;
   justify-content: space-between;
 }
-.top_header ul li {
+nav ul li {
   list-style: none;
 }
-.top_header ul li a {
+nav ul li a {
   text-decoration: none;
   user-select: none;
   color: white;
   font-family: "Raleway-SemiBold";
   transition: 0.3s;
 }
-.top_header ul li a:hover {
+nav ul li a:hover {
   color: black;
   transition: 0.3s;
 }
-.top_header form {
+nav form {
   display: flex;
   align-items: center;
 }
-.top_header form button {
+nav form button {
   padding: 5px 20px;
   background-color: transparent;
   border: 1px solid white;
@@ -88,7 +91,7 @@ header {
   transition: 0.3s;
   cursor: pointer;
 }
-.top_header form button:hover {
+nav form button:hover {
   border-color: black;
   color: black;
   transition: 0.3s;
@@ -109,7 +112,6 @@ header {
 }
 .mid_header_right {
   width: 37.50%;
-  background: brown;
 }
 .mid_header_left h3 {
   font-family: "Raleway-ExtraBold";
@@ -132,12 +134,12 @@ header {
   justify-content: center;
   text-decoration: none;
   color: white;
-  border-radius: 8px;
+  border-radius: 0.5vw;
   text-transform: uppercase;
   font-family: "Roboto";
   font-size: 1vw;
   background: #061E37;
-  box-shadow: 0 2px 2px 0 rgba(0 0 0 0 0.5);
+  box-shadow: 0 2px 2px 0 rgba(0 0 0 0.5);
 }
 .mid_header_left a+a {
   color: #061E37;
@@ -149,15 +151,10 @@ header {
   max-height: 100%;
 }
 
-/*====================== MAIN ======================*/
+/*====================== EASY AND USEFUL ======================*/
 
-main {
-  background: green;
-  height: 3805px;
-}
 .easy_and_useful {
   width: 1440px;
-  background: pink;
   position: relative;
   margin: 0 auto;
 }
@@ -177,7 +174,6 @@ main {
 }
 .eau_content {
   width: 100%;
-  background: red;
   display: flex;
 }
 .eau_top {
@@ -192,7 +188,7 @@ main {
 .eau_top h3 {
   font-size: 2.5vw;
 }
-.eau_top h2 {
+.eau_top h4 {
   font-size: 1.4vw;
   color: #B0BEC5;
 }
@@ -214,7 +210,6 @@ main {
   flex-direction: column;
   align-items: center;
   width: 24.3%;
-  background: yellow;
   justify-content: space-between;
 }
 .middle_content p {
@@ -255,6 +250,8 @@ main {
   box-shadow: 0 2px 3px 1px rgba(0, 0, 0, 0.5);
 }
 
+/*====================== COUNTS ======================*/
+
 .counts {
   width: 100%;
   position: relative;
@@ -274,10 +271,15 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: 0.3s;
+  overflow: hidden;
+  transition: 0.5s;
 }
 .counts_content_img {
   width: 15%;
+  transition: 0.5s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .counts_content_img img {
   max-width: 100%;
@@ -287,6 +289,7 @@ main {
   color: white;
   font-size: 1.3vw;
   margin-left: 7%;
+  transition: 0.5s;
 }
 .business {
   background: #80D8FF;
@@ -302,8 +305,20 @@ main {
 }
 .counts_content:hover {
   filter: grayscale(50%);
-  transition: 0.3s;
+  transition: 0.5s;
 }
+.counts_content:hover .counts_content_img {
+  transform: scale(1.3);
+  transition: 0.5s linear;
+  margin-right: 10%;
+}
+.counts_content:hover p {
+  transform: scale(1.3);
+  transition: 0.5s linear;
+}
+
+/*====================== SERVICES ======================*/
+
 .services {
   width: 800px;
 
@@ -411,7 +426,6 @@ summary:focus {
   bottom: 0;
   left: 0;
   right: 0;
-  background: yellow;
   overflow: hidden;
 }
 .testimonials_wrapper>img {
@@ -510,112 +524,331 @@ summary:focus {
 
 .team {
   width: 90%;
-  height: 760px;
-  background: yellow;
   margin: 0 auto;
+  position: relative;
+}
+.team::before {
+  content: "";
+  display: block;
+  padding-top: 52.78%;
 }
 .team_wrapper {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #FFFFFF;
 }
-.team_wrapper h3 {
-  font-family: "Raleway-SemiBold";
+.team_wrapper>h3 {
   margin-top: 6.95%;
-  font-size: 40pt;
+  font-family: "Raleway-SemiBold";
+  font-size: 3vw;
 }
-.team_wrapper p {
-  margin-top: 2.1%;
+.team_wrapper>p {
+  width: 38.9%;
   font-family: "Raleway-Regular";
-  font-size: 11pt;
-  color: #78909C;
-  width: 38.5%;
+  font-size: 0.9vw;
   text-align: center;
-  line-height: 17pt;
+  margin-top: 2%;
+  line-height: 1.4vw;
+  color: #90A4AE;
 }
 .team_wrapper_avatars {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: 1fr;
-  grid-template-areas: "left centre right";
-  align-items: center;
-  justify-items: center;
+  display: flex;
+  align-items: flex-start;
+  width: 44.8%;
+  height: 45.4%;
   margin-top: 5.55%;
-  position: relative;
 }
-.form_radio_avatars input[type=radio] {
-  display: none;
-}
-.content_avatars {
-  position: absolute;
-  left: -15%;
-  right: 0;
-  width: 134.5%;
+.form_radio_avatars {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  opacity: 0;
-  transition: opacity 0.2s;
-}
-.content_avatars p {
-  width: 100%;
-  font-family: "Raleway-Regular";
-  color: #78909C;
-  font-size: 0.8vw;
-}
-.form_radio_avatars input[type=radio]:checked~.content_avatars {
-  opacity: 1;
-  transition: opacity 0.5s;
-}
-.form_radio_avatars input[type=radio]:checked +label>img {
-  border: 8px solid black;
-  border-radius: 50%;
-  box-sizing: border-box;
-}
-.avatar_1 {
-  grid-area: left;
-}
-.avatar_1 input[type=radio]:checked+label>img, .avatar_3 input[type=radio]:checked+label>img {
-  width: 152%;
   position: relative;
-  right: 30%;
-  transition: width 0.8s;
+  overflow: visible;
 }
-.avatar_2 {
-  grid-area: centre;
+
+.form_radio_avatars input[type=radio] {
+  display: none;
 }
-.avatar_3 {
-  grid-area: right;
-}
-.avatar_2 input[type=radio]:not(:checked)+label>img {
-  width: 60%;
-  position: relative;
-  left: 20%;
-  transition: width 0.5s;
-}
-.team_links {
-  margin-top: 14.5%;
-  width: 14%;
+.form_radio_avatars label {
+  width: 80%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  cursor: pointer;
 }
-.team_links img {
-  flex-basis: content;
+.form_radio_avatars label img {
+  max-width: 100%;
+  object-fit: cover;
+  width: 90%;
 }
+.avatar_1 label {
+  width: 74%;
+  margin-left: 50%;
+}
+.avatar_3 label {
+  width: 86%;
+  margin-right: 45%;
+}
+.content_avatars {
+  position: relative;
+  top: 100%;
+  width: 300%;
+  visibility: hidden;
+  text-align: center;
+  overflow: visible;
+  margin-top: 20%;
+}
+.content_avatars h3 {
+  font-family: "Raleway-Bold";
+  font-size: 1vw;
+}
+.content_avatars p {
+  font-family: "Raleway-Regular";
+  font-size: 0.8vw;
+  margin-top: 1.4%;
+  line-height: 1.1vw;
+  color: #90A4AE;
+}
+.form_radio_avatars:nth-child(odd)>.content_avatars {
+  top: 150%;
+  left: 90%;
+  width: 300%;
+}
+.form_radio_avatars:nth-child(3)>.content_avatars {
+  left: -110%;
+}
+.form_radio_avatars input[type=radio]:checked~.content_avatars {
+  visibility: visible;
+}
+.form_radio_avatars input[type=radio]:not(:checked)+label {
+  width: 50%;
+  margin-top: 12.5%;
+}
+.avatar_1 input[type=radio]:not(:checked)+label {
+  width: 44%;
+}
+.team_links {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 1fr;
+  align-items: center;
+  justify-items: center;
+  width: 13.9%;
+  height: 2.63%;
+}
+.links_container {
+  width: 100%;
+  text-align: center;
+}
+.links_container:nth-child(2) {
+  width: 50%;
+}
+.team_links a img {
+  max-width: 100%;
+  width: 50%;
+  object-fit: contain;
+}
+
+/*====================== CONTACT US ======================*/
+
+.contact_us {
+  width: 100%;
+  padding-top: 41.25%;
+  position: relative;
+}
+.contact_us_wrapper {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #FAFAFA;
+}
+.contact_us_wrapper h3 {
+  text-align: center;
+  margin-top: 3.47%;
+  font-family: "Raleway-SemiBold";
+  font-size: 3vw;
+}
+.contact_us_wrapper p {
+  margin: 1.875% auto 0 auto;
+  font-family: "Raleway-Regular";
+  font-size: 0.8vw;
+  line-height: 1.3vw;
+  text-align: center;
+  width: 35%;
+}
+.contact_us_form {
+  width: 37.5%;
+  height: 54.55%;
+  margin: 3.82% auto 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-gap: 3.666667% 6.666667%;
+  grid-auto-flow: row;
+}
+.contact_us_form input, .contact_us_form button, .contact_us_form textarea {
+  box-sizing: border-box;
+  border-radius: 0.4vw;
+  border: 1px solid black;
+}
+ .contact_us_form input, textarea {
+  font-family: "Raleway-Medium";
+  padding-left: 7.14%;
+  font-size: 0.8vw;
+}
+.contact_us_form input:focus, .contact_us_form textarea:focus {
+  outline: none;
+}
+.contact_us_form input:focus::placeholder, .contact_us_form textarea:focus::placeholder {
+  color: transparent;
+}
+.contact_us_form textarea {
+  grid-column: 1/3;
+  grid-row: 3/5;
+  padding: 3.3333% 0 0 3.3333% ;
+  resize: none;
+}
+.contact_us_form *::placeholder {
+  color: black;
+}
+.contact_us_subscribe {
+  align-self: center;
+  display: block;
+  width: 100%;
+  user-select: none;
+  font-family: "Raleway-Medium";
+  font-size: 0.8vw;
+  cursor: pointer;
+  position: relative;
+}
+.contact_us_subscribe input[type=checkbox] {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  width: 0;  background: green;
+  height: 0;
+  display: block;
+}
+.contact_us_subscribe span {
+  margin-left: 15%;
+}
+.contact_us_subscribe span::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  width: 50%;
+  height: 300%;
+  position: absolute;
+  right: 90.5%;
+  top: -70%;
+  z-index: 100;
+  background-image: url(./images/icon/checkbox.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-x: 129%;
+}
+.contact_us_subscribe input[type=checkbox]:checked+span::before {
+  background-position-x: -29%;
+  right: 50.5%;
+}
+.contact_us_form button {
+  height: 100%;
+  width: 50%;
+  justify-self: end;
+  border: none;
+  text-transform: uppercase;
+  font-family: "Raleway-Medium";
+  font-size: 0.9vw;
+  background: #1DE9B6;
+  color: white;
+  cursor: pointer;
+}
+.contact_us_form button:hover {
+  box-shadow: 0 0 5px 0 black;
+}
+.contact_us_form button:active {
+  outline: none;
+  box-shadow: inset 0 0 2px 0.5px black;
+  color: black;
+}
+.contact_us_form button:focus {
+  outline: none;
+}
+
 /*====================== FOOTER ======================*/
 
 footer {
-  background: red;
-  height: 300px;
+  background: #061E37;
+  width: 100%;
+  padding-top: 18.75%;
+  position: relative;
+}
+.footer_wrapper {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.bot_header {
+  padding: 0;
+}
+.bot_middle {
+  display: flex;
+  justify-content: space-between;
+  margin: 5% 5% 0 5%;
+}
+.bot_links {
+  width: 350px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.bot_links a {
+  text-decoration: none;
+  font-family: "Raleway-Regular";
+  font-size: 14px;
+  color: #A5A9AE;
+}
+.bot_links p {
+  color: white;
+  font-size: 14px;
+}
+.bot_links_images {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 200px;
+}
+.bot_links_images_container a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.bot_links_images_container img {
+  max-width: 100%;
+  height: 100%;
+}
+.bot_header ul li a:hover {
+  color: #1DE9B6;
 }
 
-
 /*====================== ADAPTIVE ======================*/
+
 @media (max-width: 1455px) {
   .easy_and_useful {
     width: 100%;
@@ -626,17 +859,206 @@ footer {
     margin-top: 8.5%;
   }
 }
-@media (max-width: 1023px) {
+@media (max-width: 1025px) {
+  .eau_top {
+    width: 50%;
+    margin-top: 4.5%;
+  }
+  .eau_top h3 {
+    font-size: 4vw;
+  }
+  .eau_top h4 {
+    font-size: 1.8vw;
+    margin-top: 2.5%;
+  }
+  .eau_top p {
+    font-size: 1.4vw;
+    margin-top: 2%;
+  }
+  .eau_middle {
+    width: 96%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 40%;
+  }
+  .button_link {
+    height: 20%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .button_link a {
+    width: 45%;
+    margin-left: 0;
+    font-size: 1.3vw;
+  }
+  .mid_header {
+    height: 60%;
+  }
+  .mid_header_right, .mid_header_left {
+    width: 45%;
+  }
+  .mid_header_left h3 {
+    font-size: 4.5vw;
+  }
+  .mid_header_left p {
+    font-size: 1.7vw;
+  }
+  .middle_content_image {
+    width: 35%;
+    text-align: center;
+  }
+  .middle_content {
+    width: 27%;
+  }
+  .middle_content p {
+    font-size: 1.5vw;
+  }
+  .middle_content p+p {
+    font-size: 1.2vw;
+  }
+  .eau_bot {
+    margin-top: 2.5%;
+  }
+  .counts_content_img {
+    width: 20%;
+  }
+  .counts_content p {
+    font-size: 2vw;
+  }
+  .counts_content:hover .counts_content_img {
+    transform: none;
+    margin-right: 0;
+  }
+  .counts_content:hover p {
+    transform: none;
+  }
   .services {
     width: 78%;
+    height: 100%;
   }
   .services_wrapper h3 {
     font-size: 4.2vw;
+    margin-top: 4%;
   }
   .services_wrapper p {
-    font-size: 1.4vw;
+    font-size: 1.8vw;
+    width: 85%;
   }
   .services_wrapper summary span {
     font-size: 1.4vw;
+  }
+  .testimonials_item_text h3 {
+    font-size: 3.15vw;
+  }
+  .testimonials_item_text p {
+    font-size: 1.2vw;
+    line-height: 1.5vw;
+  }
+  .testimonials_item:first-child {
+    height: 65%;
+  }
+  .testimonials_item_people_about h3 {
+    font-size: 1.8vw;
+  }
+  .testimonials_item_people_about p {
+    font-size: 1.1vw;
+  }
+  #get_started {
+    font-size: 1.5vw;
+    padding: 1.5vw;
+  }
+  .team_wrapper>h3 {
+    font-size: 4.5vw;
+    margin-top: 3%;
+  }
+  .team_wrapper>p {
+    font-size: 1.5vw;
+    width: 55%;
+    line-height: 2vw;
+  }
+  .team_wrapper_avatars {
+    width: 65%;
+    height: 58%;
+    margin-top: 2.5%;
+  }
+  .content_avatars {
+    margin-top: 12%;
+  }
+  .content_avatars h3 {
+    font-size: 3vw;
+  }
+  .content_avatars p {
+    font-size: 1.2vw;
+    line-height: 1.6vw;
+  }
+  .team_links {
+    width: 22%;
+  }
+  .contact_us_wrapper h3 {
+    margin-top: 2%;
+    font-size: 4.5vw;
+  }
+  .contact_us_wrapper p {
+    font-size: 1.2vw;
+    line-height: 1.7vw;
+    width: 55%;
+  }
+  .contact_us_form {
+    grid-template-columns: 1fr 1fr;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(8, 1fr);
+    height: 65%;
+    margin-top: 2%;
+  }
+  .contact_us_form input {
+    grid-column: 1/3;
+    padding-left: 3.65%;
+  }
+  .contact_us textarea {
+    grid-row: 5/7;
+  }
+  .contact_us label {
+    grid-column: 1;
+    grid-row: 7/8;
+  }
+  .contact_us button {
+    grid-column: 2;
+    grid-row: 7/9;
+    height: 65%;
+  }
+}
+@media (max-width: 900px) {
+  nav form button {
+    padding: 3px 15px;
+  }
+  nav .logo {
+    width: 20.3%;
+  }
+  .logo img {
+    max-width: 100%;
+  }
+  .top_header ul {
+    width: 51.15%;
+  }
+  .top_header ul li a {
+    font-size: 1.7vw;
+  }
+  .top_header form {
+    width: 8.67%;
+  }
+  .top_header form button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    font-size: 1.5vw;
+  }
+  .testimonials_item_people_avatar {
+    width: 70%;
+  }
+  .testimonials_item_people_avatar img {
+    max-width: 100%;
   }
 }
