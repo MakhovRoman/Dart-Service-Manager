@@ -51,6 +51,9 @@ header {
   right: 0;
 }
 /*конец создания пропорционального изменения высоты и ширины https://denis-creative.com/sohranyaem-proportsii-vysoty-i-shiriny-elementa-pri-izmenenii-shiriny-kontenta-na-chistom-css/ */
+.hamburger-menu {
+  display: none;
+}
 nav {
   display: flex;
   justify-content: space-between;
@@ -81,7 +84,7 @@ nav form {
   display: flex;
   align-items: center;
 }
-nav form button {
+nav form button, .hamburger-menu_item form button {
   padding: 5px 20px;
   background-color: transparent;
   border: 1px solid white;
@@ -442,7 +445,7 @@ summary:focus {
   width: 90%;
   height: 100%;
 
-  z-index: 100;
+
   position: relative;
   margin: 0 auto;
   display: flex;
@@ -751,7 +754,7 @@ summary:focus {
   position: absolute;
   right: 90.5%;
   top: -70%;
-  z-index: 100;
+
   background-image: url(./images/icon/checkbox.png);
   background-size: contain;
   background-repeat: no-repeat;
@@ -833,6 +836,7 @@ footer {
   align-items: center;
   width: 200px;
 }
+
 .bot_links_images_container a {
   display: flex;
   align-items: center;
@@ -857,6 +861,28 @@ footer {
 @media (max-width: 1300px) {
   .services_wrapper h3 {
     margin-top: 8.5%;
+  }
+  .bot_header ul {
+    width: 35%;
+  }
+  .bot_header ul li a {
+    font-size: 1.3vw;
+  }
+  .bot_links {
+    width: 35%;
+  }
+  .bot_links a, .bot_links p {
+    font-size: 1.4vw;
+  }
+  .bot_links_images {
+    width: 25%;
+  }
+  .bot_links_images_container  {
+    width: 20%;
+  }
+  .bot_links_images_container img {
+    max-width: 50%;
+    height: auto;
   }
 }
 @media (max-width: 1025px) {
@@ -1060,5 +1086,330 @@ footer {
   }
   .testimonials_item_people_avatar img {
     max-width: 100%;
+  }
+}
+@media (max-width: 435px) {
+  .top_header {
+    display: none;
+  }
+  .hamburger-menu {
+    display: block;
+    height: 10%;
+  }
+    #hamburger-menu_toggle {
+    opacity: 0;
+  }
+  .hamburger-menu_button {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 12.5px;
+    left: 20px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 10;
+  }
+  #hamburger-menu_toggle:checked~.hamburger-menu_button {
+    position: fixed;
+  }
+  .hamburger-menu_button span, .hamburger-menu_button span::after, .hamburger-menu_button span::before {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: rgb(6, 30, 55);
+  }
+  .hamburger-menu_button>span::before {
+    content: "";
+    top: -8px;
+  }
+  .hamburger-menu_button>span::after {
+    content: "";
+    top: 8px;
+  }
+  .hamburger-menu_box {
+    position: fixed;
+    visibility: hidden;
+    top: 0;
+    left: -100%;
+    width: 300px;
+    height: 100%;
+    margin: 0;
+    padding: 80px 0;
+    list-style: none;
+    background: rgba(6, 30, 55, 0.97);
+    box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+    z-index: 5;
+  }
+  .hamburger-menu_item:not(:last-child) {
+    height: 40px;
+    display: flex;
+    box-sizing: border-box;
+  }
+  .hamburger-menu_item a {
+    color: white;
+    font-family: "Raleway-Regular";
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 24px;
+  }
+  .hamburger-menu_item:not(:last-child):hover {
+    background: rgb(29, 233, 182);
+  }
+  .hamburger-menu_item:hover a {
+    color: rgb(6, 30, 55);
+  }
+  .hamburger-menu_item:last-child {
+    position: absolute;
+    top: 12.5px;
+    right: 24px;
+  }
+  .hamburger-menu_item form button {
+    margin-left: 24px;
+  }
+  .hamburger-menu_item form button:active {
+    border-color: rgb(29, 233, 182);
+    color: rgb(29, 233, 182);
+  }
+  .hamburger-menu form button:focus {
+    outline: none;
+  }
+  .hamburger-menu_button span, .hamburger-menu_button span::before, .hamburger-menu_button span::after, .hamburger-menu_box {
+    transition-duration: 0.3s;
+  }
+  #hamburger-menu_toggle:checked~.hamburger-menu_button>span {
+    transform: rotate(45deg);
+  }
+  #hamburger-menu_toggle:checked~.hamburger-menu_button>span::before{
+    top: 0;
+    transform: rotate(0);
+  }
+  #hamburger-menu_toggle:checked~.hamburger-menu_button>span::after {
+    top: 0;
+    transform: rotate(90deg);
+  }
+  #hamburger-menu_toggle:checked~.hamburger-menu_button>span, #hamburger-menu_toggle:checked~.hamburger-menu_button>span::before, #hamburger-menu_toggle:checked~.hamburger-menu_button>span::after {
+    background: white;
+  }
+  #hamburger-menu_toggle:checked~.hamburger-menu_box {
+    visibility: visible;
+    left: 0;
+  }
+  .mid_header {
+    margin-top: 0;
+    height: 80%;
+  }
+  .mid_header_right {
+    display: none;
+  }
+  .mid_header_left {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+  }
+  .mid_header_left h3 {
+    width: 100%;
+    font-size: 16px;
+    line-height: 20px;
+    box-sizing: border-box;
+    padding-left: 55%;
+    background-image: url(./images/Logo.png);
+    background-repeat: no-repeat;
+    background-size: 35%;
+    background-position: 20% 50%;
+    display: flex;
+    align-items: flex-start;
+  }
+  .mid_header_left p {
+    width: 100%;
+    font-size: 9px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+  .button_link {
+    height: 80%;
+    align-self: end;
+  }
+  .button_link a {
+    font-size: 12px;
+  }
+  .eau_middle {
+    width: 100%;
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    margin-top: 2%;
+    -webkit-overflow-scrolling: touch;
+  }
+  .eau_middle::-webkit-scrollbar, .counts_wrapper::-webkit-scrollbar {
+    display: none;
+  }
+  .middle_content {
+    min-width: 250px;
+    display: inline-grid;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: 50% 50%;
+    grid-template-areas: "image title"
+                         "image text";
+    margin: 0 auto;
+  }
+  .middle_content_image {
+    grid-area: image;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+  .middle_content p {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+  .middle_content p+p {
+    font-size: 7px;
+    text-align: justify;
+    white-space: normal;
+    display: block;
+  }
+  .middle_content_image img {
+    max-width: 50%;
+  }
+  .eau_bot {
+    height: 12%;
+    margin-top: 5.5%;
+  }
+  .eau_bot a {
+    width: 30%;
+    font-size: 12px;
+  }
+  .eau_top {
+    margin-top: 2.5%;
+  }
+  .eau_top p {
+    display: none;
+  }
+  .eau_top h3 {
+    font-size: 22px;
+  }
+  .eau_top h4 {
+    font-size: 12px;
+  }
+  .counts {
+    padding-top: 0;
+    position: static;
+  }
+  .counts_wrapper {
+    height: 80px;
+    position: static;
+    display: block;
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+  .counts_content {
+    display: inline-flex;
+    height: 100%;
+    width: 45%;
+    margin-right: -4px;
+  }
+  .counts_content_img {
+    width: 25%;
+  }
+  .counts_content p {
+    font-size: 14px;
+  }
+  .services_wrapper h3 {
+    font-size: 22px;
+  }
+  .services_wrapper p {
+    font-size: 12px;
+    line-height: 15px;
+    width: 100%;
+  }
+  .services_wrapper summary {
+    padding: 0;
+    height: 45px;
+  }
+  .summary_image {
+    width: 10%;
+    margin-left: 10px;
+  }
+  .services_wrapper summary span {
+    font-size: 10px;
+  }
+  .summary_arrow {
+    width: 10%;
+  }
+  .details_image {
+    width: 100%;
+  }
+  .details_text p {
+    font-size: 7px;
+    margin-left: 5%;
+  }
+  .testimonials_item:first-child {
+    height: 85%;
+    width: 40%;
+  }
+  .testimonials_item_text h3 {
+    font-size: 16px;
+    line-height: 18px;
+  }
+  .testimonials_item_text p {
+    font-size: 5px;
+    line-height: 7px;
+  }
+  #get_started {
+    padding: 0;
+    width: 80px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    position: absolute;
+    left: calc(50% - 40px);
+    top: 75%;
+    font-size: 10px;
+  }
+  .testimonials_item:last-child {
+    display: block;
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    width: 60%;
+    height: 85%;
+  }
+  .testimonials_item_people {
+    display: inline-flex;
+    white-space: normal;
+    min-width: 200px;
+    height: 70%;
+    margin: auto 0;
+  }
+  .testimonials_item_people_about h3 {
+    font-size: 10px;
+  }
+  .testimonials_item_people_about p {
+    font-size: 5.8px;
+    line-height: 8px;
+  }
+  .testimonials_item_people_avatar {
+    width: 100%;
+  }
+  .team::before {
+    padding-top: 75%;
   }
 }
