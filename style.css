@@ -1040,14 +1040,14 @@ footer {
     grid-column: 1/3;
     padding-left: 3.65%;
   }
-  .contact_us textarea {
+  .contact_us_form textarea {
     grid-row: 5/7;
   }
-  .contact_us label {
+  .contact_us_form label {
     grid-column: 1;
     grid-row: 7/8;
   }
-  .contact_us button {
+  .contact_us_form button {
     grid-column: 2;
     grid-row: 7/9;
     height: 65%;
@@ -1359,6 +1359,9 @@ footer {
     font-size: 7px;
     margin-left: 5%;
   }
+  .details_text p+p {
+    margin-top: 5%;
+  }
   .testimonials_item:first-child {
     height: 85%;
     width: 40%;
@@ -1399,6 +1402,9 @@ footer {
     height: 70%;
     margin: auto 0;
   }
+  .testimonials_item_people_about {
+    margin-left: 2%;
+  }
   .testimonials_item_people_about h3 {
     font-size: 10px;
   }
@@ -1408,8 +1414,85 @@ footer {
   }
   .testimonials_item_people_avatar {
     width: 100%;
+    margin-left: 3%;
   }
   .team::before {
     padding-top: 75%;
+  }
+  .team_wrapper>h3 {
+    font-size: 22px;
+  }
+  .team_wrapper>p {
+    font-size: 7px;
+    width: 80%;
+  }
+  .team_wrapper_avatars {
+    width: 100%;
+    height: 65%;
+  }
+  .form_radio_avatars label {
+    width: 100%;
+  }
+  .form_radio_avatars input[type=radio]:not(:checked)+label {
+    width: 70%;
+  }
+  .avatar_1 input[type=radio]:not(:checked)+label {
+    width: 64%;
+    margin-top: 9%;
+  }
+  .avatar_1 label {
+    margin-left: 25%;
+    width: 92%;
+  }
+  .avatar_3 label {
+    margin-right: 25%;
+    width: 107%;
+  }
+  .form_radio_avatars:nth-child(1)>.content_avatars {
+    margin-top: 10%;
+  }
+  .content_avatars h3 {
+    font-size: 12px;
+  }
+  .content_avatars p {
+    font-size: 7px;
+    line-height: 9px;
+  }
+  .team_links {
+    width: 35%;
+  }
+  .contact_us {
+    padding-top: 85%;
+  }
+  .contact_us_wrapper h3 {
+    font-size: 22px;
+  }
+  .contact_us_wrapper p {
+    font-size: 7px;
+    line-height: 9px;
+    width: 65%;
+  }
+  .contact_us_form {
+    height: 85%;
+    width: 60%;
+  }
+  .contact_us_form button {
+    height: 45%;
+    width: 65%;
+    font-size: 12px;
+    border-radius: 3px;
+  }
+  .contact_us_form input, textarea {
+    font-size: 9px;
+  }
+  .contact_us_subscribe {
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  .contact_us_subscribe span::before {
+    background-position-x: 159%;
+  }
+  .contact_us_subscribe input[type=checkbox]:checked+span::before {
+    background-position-x: -59%;
   }
 }
