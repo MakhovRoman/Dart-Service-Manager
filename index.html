@@ -320,10 +320,10 @@
           <h3>Contact Us</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum nostrum excepturi nemo odit debitis. Corporis numquam asperiores doloremque.</p>
           <form action="" class="contact_us_form">
-            <input type="text" name="first_name" placeholder="First Name">
-            <input type="text" name="last_name" placeholder="Last Name">
-            <input type="email" name="e-mail" placeholder="Email">
-            <input type="tel" name="phone" placeholder="Phone">
+            <div class="contact_us_form_item"><input type="text" name="first_name" placeholder="First Name *" required pattern="[A-Za-zА-Яа-яЁё]{1,}"><span></span></div>
+            <div class="contact_us_form_item"><input type="text" name="last_name" placeholder="Last Name *" required pattern="[A-Za-zА-Яа-яЁё]{1,}"><span></span></div>
+            <div class="contact_us_form_item"><input type="email" name="e-mail" placeholder="Email *" required><span></span></div>
+            <div class="contact_us_form_item"><input type="tel" name="phone" placeholder="Phone *" required maxlength="15"><span></span></div>
             <textarea name="message" placeholder="Message"></textarea>
             <label class="contact_us_subscribe">
               <input type="checkbox" name="subscribe">
