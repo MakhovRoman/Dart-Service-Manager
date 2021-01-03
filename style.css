@@ -734,11 +734,10 @@ summary:focus {
   font-family: "Raleway-Medium";
 }
  .contact_us_form input, textarea {
-  font-family: "Raleway-Medium";
   padding-left: 7.14%;
   font-size: 0.8vw;
 }
-.contact_us_form input[type=tel] {
+.contact_us_form input {
   font-family: Arial;
 }
 .contact_us_form input:focus, .contact_us_form textarea:focus {
