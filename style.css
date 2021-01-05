@@ -143,11 +143,17 @@ nav form button:hover {
   font-size: 1vw;
   background: #061E37;
   box-shadow: 0 2px 2px 0 rgba(0 0 0 0.5);
+  transition: 0.3s;
 }
 .mid_header_left a+a {
   color: #061E37;
   background: #FFFFFF;
   margin-left: 5.6%;
+}
+.mid_header_left a:hover, #get_started:hover {
+  background: #ffdf29;
+  color: black;
+  transition: 0.3s;
 }
 .mid_header_right iframe {
   max-width: 100%;
@@ -491,7 +497,9 @@ summary:focus {
   color: white;
   padding: 1vw;
   border-radius: 0.3vw;
+  transition: 0.3s;
 }
+
 .testimonials_item_people {
   display: flex;
   justify-content: space-between;
